@@ -16,3 +16,12 @@ $ yarn start
 ### Screenshot 100% Score Progresive Web App
 
 ![](./src/100-pwa.png)
+
+### Run Progresive Web App Audit
+
+```sh
+1. Right click inspect on chrome
+2. Select audits
+3. Click Perform an audit
+4. Click Run Audit
+```

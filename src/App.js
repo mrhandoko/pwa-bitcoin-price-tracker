@@ -144,8 +144,8 @@ class App extends Component {
               </Table.Header>
               <Table.Body>
                 {
-                this.state.messages.map((message, index) => (
-                  <Table.Row key={index}>
+                this.state.messages.map((message) => (
+                  <Table.Row key={message.time}>
                     <Table.Cell>{message.sequence}</Table.Cell>
                     <Table.Cell>{message.prev_out.tx_index}</Table.Cell>
                     <Table.Cell>{message.prev_out.value}</Table.Cell>
