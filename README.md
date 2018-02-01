@@ -18,7 +18,7 @@ $ yarn start
 
 ### Screenshot 100% Score Progresive Web App
 
-![](./src/100-pwa.png)
+![](./src/images/100-pwa.png)
 
 ### Run Progresive Web App Audit
 
