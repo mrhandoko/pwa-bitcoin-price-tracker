@@ -7,7 +7,7 @@ export default (state = defaultState, action = {}) => {
     case 'FETCH_BITCOIN_RATE_FULFILLED': {
       return {
         ...state,
-        bitcoinRate: action.payload,
+        bitcoinRate: action.payload.data.USD.last,
       };
     }
     default:

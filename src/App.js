@@ -37,10 +37,10 @@ class App extends Component {
   }
 
   async getBitcoinPrice() {
-    await this.props.fetchBitcoinRate();
-    const { USD } = this.props.bitcoinRate.data;
+    const { bitcoinRate, getBitcoinRate } = this.props;
+    await getBitcoinRate();
     this.setState({
-      lastPrice: USD.last,
+      lastPrice: bitcoinRate,
     });
   }
 
@@ -87,7 +87,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchBitcoinRate: () => dispatch(fetchBitcoinRate()),
+  getBitcoinRate: () => dispatch(fetchBitcoinRate()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
