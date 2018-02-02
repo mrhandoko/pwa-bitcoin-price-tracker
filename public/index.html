@@ -11,12 +11,22 @@
     <!-- Tell iOS it's a PWA -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Bitcoin Price Tracker</title>
+    <style type="text/css">
+      .page-info {
+          text-align: center;
+          color: #888;
+        }
+    </style>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <p class="page-info">
+        Loading an awesome app...
+      </p>
+    </div>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
