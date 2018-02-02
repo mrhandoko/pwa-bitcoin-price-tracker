@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Header, Container, Divider } from 'semantic-ui-react';
+import { fetchBitcoinRate } from './actions';
 import {
   BTCDisplayConverter,
   InputBTCConverter,
@@ -34,12 +36,12 @@ class App extends Component {
     setInterval(() => this.getBitcoinPrice(), 2000);
   }
 
-  getBitcoinPrice() {
-    fetch('https://blockchain.info/ticker')
-      .then(response => response.json())
-      .then(result => this.setState({
-        lastPrice: result.USD.last,
-      }));
+  async getBitcoinPrice() {
+    await this.props.fetchBitcoinRate();
+    const { USD } = this.props.bitcoinRate.data;
+    this.setState({
+      lastPrice: USD.last,
+    });
   }
 
   render() {
@@ -80,4 +82,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  bitcoinRate: state.bitcoinRateStore.bitcoinRate,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchBitcoinRate: () => dispatch(fetchBitcoinRate()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

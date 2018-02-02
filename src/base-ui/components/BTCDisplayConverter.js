@@ -32,7 +32,7 @@ export default function BTCDisplayConverter(props) {
         textAlign="center"
       />
       <Button icon basic fluid onClick={onClick}>
-        <Icon name="resize vertical icon" />
+        <Icon name="resize vertical" />
       </Button>
     </Segment>
   );

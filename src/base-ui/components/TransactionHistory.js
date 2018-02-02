@@ -23,8 +23,8 @@ export default function TransactionHistory(props) {
               </Table.Header>
               <Table.Body>
                 {
-                  messages.slice(0, 20).map(message => (
-                    <Table.Row key={message.time}>
+                  messages.slice(0, 20).map((message, index) => (
+                    <Table.Row key={index}>
                       <Table.Cell>{message.sequence}</Table.Cell>
                       <Table.Cell>{message.prev_out.tx_index}</Table.Cell>
                       <Table.Cell>{message.prev_out.value}</Table.Cell>

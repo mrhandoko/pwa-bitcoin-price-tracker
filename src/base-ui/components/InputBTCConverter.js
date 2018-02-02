@@ -21,7 +21,7 @@ export default function InputBTCConverter(props) {
             value={buyValue}
           />
           <Form.Button fluid basic color="blue" onClick={onClick}>
-            <Icon name="resize horizontal icon" />
+            <Icon name="resize horizontal" />
           </Form.Button>
           <Form.Dropdown
             fluid
