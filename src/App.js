@@ -40,7 +40,7 @@ class App extends Component {
     await this.props.fetchBitcoinRate();
     const { USD } = this.props.bitcoinRate.data;
     this.setState({
-      lastPrice: USD.last,
+      lastPrice: USD,
     });
   }
 
