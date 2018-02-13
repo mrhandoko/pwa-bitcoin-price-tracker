@@ -33,6 +33,8 @@ self.addEventListener('install', event => {
               // We could also cache assets like CSS and images
               const urlsToCache = [
                 '/',
+                '/styles/styles.css',
+                '/script/webpack-bunle.js',
                 assets['main.js']
               ];
               cache.addAll(urlsToCache);
@@ -43,12 +45,12 @@ self.addEventListener('install', event => {
 });
 
 // Here we intercept request and serve up the matching files
-self.addEventListener('fetch', event => {
-  if (activateCache) {
-    event.respondWith(
-      caches.match(event.request).then(response => {
-        return response || fetch(event.request);
-      })
-    );
-  }
-});
+// self.addEventListener('fetch', event => {
+//   if (activateCache) {
+//     event.respondWith(
+//       caches.match(event.request).then(response => {
+//         return response || fetch(event.request);
+//       })
+//     );
+//   }
+// });
